@@ -1,0 +1,21 @@
+set runtimepath+=/home/kkantor/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('/home/kkantor/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'scroolose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-sleuth'
+
+call neobundle#end()
+
+set bs=2
+filetype plugin indent on
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set list
+set nu
+set statusline+=%l/%L\ %f\ %B
+set laststatus=2
+
+if exists('+colorcolumn')
+	set colorcolumn=80
+endif
