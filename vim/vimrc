@@ -1,5 +1,5 @@
-set runtimepath+=/home/kkantor/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('/home/kkantor/.vim/bundle/'))
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scroolose/nerdtree'
