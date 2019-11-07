@@ -1,3 +1,5 @@
+all: vim
+
 vimrc:
 	cp vim/vimrc ~/.vimrc
 
@@ -12,5 +14,3 @@ cscope-vim:
 	cp vim/cscope_maps.vim ~/.vim/plugin/
 
 vim: vimrc neobundle cscope-vim
-
-all: vim
