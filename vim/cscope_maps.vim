@@ -30,6 +30,8 @@ if has("cscope")
 
     """"""""""""" Standard cscope/vim boilerplate
 
+    set csprg=cscope-fast
+
     " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
     set cscopetag
 

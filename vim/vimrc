@@ -15,6 +15,7 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set nu
 set statusline+=%l/%L\ %f\ %B
 set laststatus=2
+set scrolloff=10
 
 if exists('+colorcolumn')
 	set colorcolumn=80
