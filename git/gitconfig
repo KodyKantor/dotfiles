@@ -1,0 +1,10 @@
+[oh-my-zsh]
+	hide-status = 1
+[user]
+	email = kody@kkantor.com
+	name = Kody A Kantor
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+	trustExitCode = true # allow quit all with :cq
