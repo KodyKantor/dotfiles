@@ -8,14 +8,14 @@
 #		$(VIM_CONFIG) \ ... etc
 
 VIM_DIRS =	~/.vim \
-		~/.vim/plugin
+		~/.vim/bundle \
+		~/.vim/colors
 
 VIM_FILES =	~/.vimrc \
-		~/.vim/bundle/neobundle.vim/plugin/neobundle.vim \
-		~/.vim/plugin/cscope_maps.vim
+		~/.vim/bundle/Vundle.vim \
+		~/.vim/colors/molokai.vim
 
 CP_FILES =	~/.vimrc \
-		~/.vim/plugin/cscope_maps.vim \
 		~/.gitconfig
 
 CP_FILE =  @echo "copying $^" && cp $^ $@
@@ -38,7 +38,6 @@ git: ~/.gitconfig
 $(VIM_DIRS):
 	mkdir $@
 
-
 #
 # 'real' targets
 #
@@ -47,13 +46,10 @@ $(VIM_DIRS):
 
 # This neobundle.vim file is something that the install process spits out. I
 # don't know if there's a better file to target.
-~/.vim/bundle/neobundle.vim/plugin/neobundle.vim:
-	curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh > install.sh
-	sh install.sh
-	~/.vim/bundle/neobundle.vim/bin/neoinstall
-	rm install.sh
+~/.vim/bundle/Vundle.vim:
+	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-~/.vim/plugin/cscope_maps.vim: vim/cscope_maps.vim
+~/.vim/colors/molokai.vim: vim/molokai.vim
 	$(CP_FILE)
 
 ~/.gitconfig: git/gitconfig
