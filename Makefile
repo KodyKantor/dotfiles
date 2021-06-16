@@ -24,13 +24,16 @@ CP_FILE =  @echo "copying $^" && cp $^ $@
 # meta targets
 #
 .PHONY: all
-all: vim git
+all: vim git zsh
 
 .PHONY: vim
 vim: $(VIM_DIRS) $(VIM_FILES)
 
 .PHONY: git
 git: ~/.gitconfig
+
+.PHONY: zsh
+zsh: ~/.zshrc
 
 #
 # convenience targets
@@ -53,4 +56,7 @@ $(VIM_DIRS):
 	$(CP_FILE)
 
 ~/.gitconfig: git/gitconfig
+	$(CP_FILE)
+
+~/.zshrc: zsh/zshrc
 	$(CP_FILE)

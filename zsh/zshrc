@@ -1,0 +1,20 @@
+export ZSH="~/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+#export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+#export LIBGL_ALWAYS_INDIRECT=1
+PATH=$PATH:~/code/tools/maven/maven-current/bin:~/.local/bin/:/usr/local/go/bin:~/go/bin
+alias python="python3"
+alias pip="pip3"
+
+startpy () {
+        . ./venv/bin/activate
+}
+
+endpy () {
+        deactivate
+}
