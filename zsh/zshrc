@@ -16,3 +16,7 @@ alias pip="pip3"
 alias diddy="ssh diddy"
 alias startpy=". ./venv/bin/activate"
 alias endpy="deactivate"
+
+function sshagent () {
+	eval ssh-agent $SHELL
+}
