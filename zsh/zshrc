@@ -20,3 +20,5 @@ alias endpy="deactivate"
 function sshagent () {
 	eval ssh-agent $SHELL
 }
+
+DISABLE_AUTO_UPDATE="true"
