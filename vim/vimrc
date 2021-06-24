@@ -23,6 +23,9 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set nu
 set statusline+=%l/%L\ %f\ %B
 set laststatus=2
+"set scrolloff=10 " display ten leading lines after cursor
+nnoremap j jzz
+nnoremap k kzz
 
 if exists('+colorcolumn')
         set colorcolumn=80
