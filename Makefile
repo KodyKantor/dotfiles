@@ -16,15 +16,18 @@ VIM_FILES =	~/.vimrc \
 		~/.vim/colors/molokai.vim
 
 CP_FILES =	~/.vimrc \
-		~/.gitconfig
+		~/.gitconfig \
+		${WINDOWS_TERMINAL_CONF}
 
 CP_FILE =  @echo "copying $^" && cp $^ $@
+
+WINDOWS_TERMINAL_CONF = /mnt/c/Users/kkantor/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
 
 #
 # meta targets
 #
 .PHONY: all
-all: vim git zsh
+all: vim git zsh windows
 
 .PHONY: vim
 vim: $(VIM_DIRS) $(VIM_FILES)
@@ -34,6 +37,10 @@ git: ~/.gitconfig
 
 .PHONY: zsh
 zsh: ~/.zshrc
+
+.PHONY: windows
+windows: /mnt/c/Users/kkantor/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+	echo "testing"
 
 #
 # convenience targets
@@ -59,4 +66,8 @@ $(VIM_DIRS):
 	$(CP_FILE)
 
 ~/.zshrc: zsh/zshrc
+	$(CP_FILE)
+
+${WINDOWS_TERMINAL_CONF}: windows/windows_terminal_settings.json
+	echo "copying file"
 	$(CP_FILE)
