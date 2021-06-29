@@ -16,6 +16,7 @@ alias pip="pip3"
 alias diddy="ssh diddy"
 alias startpy=". ./venv/bin/activate"
 alias endpy="deactivate"
+alias fig="docker-compose"
 
 function sshagent () {
 	eval ssh-agent $SHELL
