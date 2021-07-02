@@ -21,7 +21,7 @@ CP_FILES =	~/.vimrc \
 
 CP_FILE =  @echo "copying $^" && cp $^ $@
 
-WINDOWS_TERMINAL_CONF = /mnt/c/Users/kkantor/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+WINDOWS_TERMINAL_CONF = $(wildcard /mnt/c/Users/${USER}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json)
 
 #
 # meta targets
@@ -39,7 +39,7 @@ git: ~/.gitconfig
 zsh: ~/.zshrc
 
 .PHONY: windows
-windows: /mnt/c/Users/kkantor/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+windows: ${WINDOWS_TERMINAL_CONF}
 
 #
 # convenience targets
