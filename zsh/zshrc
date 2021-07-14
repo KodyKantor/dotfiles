@@ -3,6 +3,7 @@ export ZSH="/home/kkantor/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 plugins=(git aws)
 
+DISABLE_AUTO_UPDATE="true" # must come before 'source [...]oh-my-zsh.sh'
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
@@ -21,5 +22,4 @@ alias fig="docker-compose"
 function sshagent () {
 	eval ssh-agent $SHELL
 }
-
-DISABLE_AUTO_UPDATE="true"
+stty -ixon

@@ -40,7 +40,6 @@ zsh: ~/.zshrc
 
 .PHONY: windows
 windows: /mnt/c/Users/kkantor/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-	echo "testing"
 
 #
 # convenience targets
@@ -69,5 +68,4 @@ $(VIM_DIRS):
 	$(CP_FILE)
 
 ${WINDOWS_TERMINAL_CONF}: windows/windows_terminal_settings.json
-	echo "copying file"
 	$(CP_FILE)
